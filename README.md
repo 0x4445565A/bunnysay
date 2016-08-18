@@ -1,18 +1,20 @@
 # bunnysay in Golang
-Bunny Sign for terminals! (rewritten in Golang)
+Bunny Sign for terminals with full width support (rewritten in Golang)
 
 ```
- _____________________
-｜                    ｜
-｜Multi-lined support ｜
-｜  with look ahead   ｜
-｜spacing!  Also with ｜
-｜   some kick ass    ｜
-｜     centering.     ｜
-｜____________________｜
+｜￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣｜
+｜　　Ｍｕｌｔｉ－ｌｉｎｅｄ　　　｜
+｜　ｓｕｐｐｏｒｔ　ｗｉｔｈ　　　｜
+｜　　ｌｏｏｋ　ａｈｅａｄ　　　　｜
+｜ｓｐａｃｉｎｇ！　　Ａｌｓｏ　　｜
+｜　　　ｗｉｔｈ　ｓｏｍｅ　　　　｜
+｜　　　ｋｉｃｋ－ａｓｓ　　　　　｜
+｜　　　ｃｅｎｔｅｒｉｎｇ．　　　｜
+｜＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿｜
 (\__/) ||
 (•ㅅ•) ||
 / 　 づ
+
 ```
 
 ## Summary

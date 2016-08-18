@@ -25,6 +25,7 @@ import (
   "fmt"
   "os"
   "strings"
+  "golang.org/x/text/width"
 )
 
 func padBunnyString(s string, maxLen int) string {
@@ -58,11 +59,15 @@ func formatBunnyString(s string, maxLen int) string {
   return returnString
 }
 
+func printBunnyPrintWide(s string) {
+  fmt.Printf("%s", width.Widen.String(s))
+}
+
 func printBunnyString(s string) bool {
-  fmt.Println(" _____________________")
-  fmt.Println("｜                    ｜")
-  fmt.Printf("%s", formatBunnyString(s, 20))
-  fmt.Println("｜____________________｜")
+  maxLen := 16
+  printBunnyPrintWide("|" + strings.Repeat("￣", maxLen)  + "|\n")
+  printBunnyPrintWide(formatBunnyString(s, maxLen))
+  printBunnyPrintWide("｜" + strings.Repeat("_", maxLen)  + "｜\n")
   fmt.Println("(\\__/) ||")
   fmt.Println("(•ㅅ•) ||")
   fmt.Println("/ 　 づ")
