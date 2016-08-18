@@ -1,5 +1,5 @@
 # bunnysay in Golang
-Bunny Sign for terminals with wchar support (rewritten in Golang)
+Bunny Sign for terminals! (rewritten in Golang)
 
 ```
  _____________________
