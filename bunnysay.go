@@ -84,10 +84,6 @@ func printAnimal(animal string, maxLen int) {
   }
 }
 
-func bunnyMaxLen() int {
-  return 20
-}
-
 func printBunnyString(s string, maxLen int, animal string) bool {
   printBunnyWide("|" + strings.Repeat("￣", maxLen)  + "|\n")
   printBunnyWide(formatBunnyString(s, maxLen))
