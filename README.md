@@ -28,12 +28,11 @@ if you wish to use from terminal.
 ## Build
 Requires go and you can simply run the following...
 
+
 ```
-git clone git@github.com:0x4445565A/bunnysay.git
-cd bunnysay
-go get golang.org/x/text/width
-go build
-# And if you so desire
-go install
+go get github.com/0x4445565a/bunnysay
+# If you get complaints about golang.org/x/text/width missing run
+# go get golang.org/x/text/width
+go install github.com/0x4445565a/bunnysay
 echo "Hack the Planet" | bunnysay
 ```
