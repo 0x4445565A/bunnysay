@@ -24,6 +24,7 @@ import (
   "bufio"
   "fmt"
   "os"
+  "flag"
   "strings"
   "golang.org/x/text/width"
 )
@@ -63,17 +64,17 @@ func printBunnyWide(s string) {
   fmt.Printf("%s", width.Widen.String(s))
 }
 
-func printAnimal(animal string) {
+func printAnimal(animal string, maxLen int) {
   switch animal {
     case "post":
-      var postString = strings.Repeat(" ", (bunnyMaxLen()-1)/2)
+      var postString = strings.Repeat(" ", (maxLen-1)/2)
       postString += "||"
-      postString += strings.Repeat(" ", (bunnyMaxLen()-1)/2)
+      postString += strings.Repeat(" ", (maxLen-1)/2)
       postString += "\n"
       printBunnyWide(strings.Repeat(postString, 3))
     default:
       bunnyTop := "(\\__/) ||"
-      bunnySpaces := strings.Repeat(" ", (bunnyMaxLen()-len(bunnyTop))/2)
+      bunnySpaces := strings.Repeat(" ", (maxLen-len(bunnyTop))/2)
       printBunnyWide(bunnySpaces)
       fmt.Println(bunnyTop)
       printBunnyWide(bunnySpaces)
@@ -87,16 +88,19 @@ func bunnyMaxLen() int {
   return 20
 }
 
-func printBunnyString(s string) bool {
-  printBunnyWide("|" + strings.Repeat("￣", bunnyMaxLen())  + "|\n")
-  printBunnyWide(formatBunnyString(s, bunnyMaxLen()))
-  printBunnyWide("｜" + strings.Repeat("_", bunnyMaxLen())  + "｜\n")
-  printAnimal("bunny")
+func printBunnyString(s string, maxLen int, animal string) bool {
+  printBunnyWide("|" + strings.Repeat("￣", maxLen)  + "|\n")
+  printBunnyWide(formatBunnyString(s, maxLen))
+  printBunnyWide("｜" + strings.Repeat("_", maxLen)  + "｜\n")
+  printAnimal(animal, maxLen)
   return true
 }
 
 func main() {
   var s string
+  animalFlag := flag.String("animal", "bunny", "Type of animal to use. Currently there is bunny and post")
+  maxFlag := flag.Int("max", 16, "The maximum canvas of sign in characters.")
+  flag.Parse()
   scanner := bufio.NewScanner(os.Stdin)
   stat, _ := os.Stdin.Stat()
   if (stat.Mode() & os.ModeCharDevice) == 0 {
@@ -106,5 +110,5 @@ func main() {
   } else {
     s = "No data found in STDIN!"
   }
-  printBunnyString(s)
+  printBunnyString(s, *maxFlag, *animalFlag)
 }

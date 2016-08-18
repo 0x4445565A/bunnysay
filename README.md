@@ -34,5 +34,5 @@ go get github.com/0x4445565a/bunnysay
 # If you get complaints about golang.org/x/text/width missing run
 # go get golang.org/x/text/width
 go install github.com/0x4445565a/bunnysay
-echo "Hack the Planet" | bunnysay
+echo "Hack the Planet" | bunnysay -animal bunny -max 16
 ```
