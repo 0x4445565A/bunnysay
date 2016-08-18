@@ -108,7 +108,7 @@ func main() {
       s += scanner.Text()
     }
   } else {
-    s = "No data found in STDIN!"
+    s = "No data found in STDIN! Use -h for help"
   }
   printBunnyString(s, *maxFlag, *animalFlag)
 }
