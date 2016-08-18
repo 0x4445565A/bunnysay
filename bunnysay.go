@@ -59,18 +59,39 @@ func formatBunnyString(s string, maxLen int) string {
   return returnString
 }
 
-func printBunnyPrintWide(s string) {
+func printBunnyWide(s string) {
   fmt.Printf("%s", width.Widen.String(s))
 }
 
+func printAnimal(animal string) {
+  switch animal {
+    case "post":
+      var postString = strings.Repeat(" ", (bunnyMaxLen()-1)/2)
+      postString += "||"
+      postString += strings.Repeat(" ", (bunnyMaxLen()-1)/2)
+      postString += "\n"
+      printBunnyWide(strings.Repeat(postString, 3))
+    default:
+      bunnyTop := "(\\__/) ||"
+      bunnySpaces := strings.Repeat(" ", (bunnyMaxLen()-len(bunnyTop))/2)
+      printBunnyWide(bunnySpaces)
+      fmt.Println(bunnyTop)
+      printBunnyWide(bunnySpaces)
+      fmt.Println("(•ㅅ•) ||")
+      printBunnyWide(bunnySpaces)
+      fmt.Println("/ 　 づ")
+  }
+}
+
+func bunnyMaxLen() int {
+  return 20
+}
+
 func printBunnyString(s string) bool {
-  maxLen := 16
-  printBunnyPrintWide("|" + strings.Repeat("￣", maxLen)  + "|\n")
-  printBunnyPrintWide(formatBunnyString(s, maxLen))
-  printBunnyPrintWide("｜" + strings.Repeat("_", maxLen)  + "｜\n")
-  fmt.Println("(\\__/) ||")
-  fmt.Println("(•ㅅ•) ||")
-  fmt.Println("/ 　 づ")
+  printBunnyWide("|" + strings.Repeat("￣", bunnyMaxLen())  + "|\n")
+  printBunnyWide(formatBunnyString(s, bunnyMaxLen()))
+  printBunnyWide("｜" + strings.Repeat("_", bunnyMaxLen())  + "｜\n")
+  printAnimal("bunny")
   return true
 }
 
