@@ -31,6 +31,7 @@ Requires go and you can simply run the following...
 ```
 git clone git@github.com:0x4445565A/bunnysay.git
 cd bunnysay
+go get golang.org/x/text/width
 go build
 # And if you so desire
 go install
