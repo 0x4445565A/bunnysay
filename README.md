@@ -23,7 +23,9 @@ Takes input from standard input, you can use
 
 `echo '<string>' | bunnysay`
 
-if you wish to use from terminal.
+Bunnysay also takes 2 parameters, animal and max.
+- animal: The type of creature holding the sign (bunny, lenny, post)
+- max: The buffer size of the size in characters
 
 ## Build
 Requires go and you can simply run the following...
@@ -35,4 +37,30 @@ go get github.com/0x4445565a/bunnysay
 # go get golang.org/x/text/width
 go install github.com/0x4445565a/bunnysay
 echo "Hack the Planet" | bunnysay -animal bunny -max 16
+```
+
+## Animals
+```
+｜￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣｜
+｜　　　　　Ｂｕｎｎｙ　　　　　　｜
+｜＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿｜
+　　　　　(\__/) ||
+　　　　　(•ㅅ•) ||
+　　　　　/ 　 づ
+```
+```
+｜￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣｜
+｜　　　　　Ｌｅｎｎｙ　　　　　　｜
+｜＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿｜
+　　　　         | |
+　　　　( ͡° ͜ʖ ͡°) | |
+　　　　/ 　   づ
+```
+```
+｜￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣｜
+｜　　　　　　Ｐｏｓｔ　　　　　　｜
+｜＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿｜
+　　　　　　　　｜｜　　　　　　　　
+　　　　　　　　｜｜　　　　　　　　
+　　　　　　　　｜｜　
 ```

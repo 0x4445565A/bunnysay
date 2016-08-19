@@ -102,7 +102,7 @@ func printBunnyString(s string, maxLen int, animal string) bool {
 
 func main() {
   var s string
-  animalFlag := flag.String("animal", "bunny", "Type of animal to use. Currently there is bunny and post")
+  animalFlag := flag.String("animal", "bunny", "Type of animal to use. Currently there is bunny, lenny, and post")
   maxFlag := flag.Int("max", 16, "The maximum canvas of sign in characters.")
   flag.Parse()
   scanner := bufio.NewScanner(os.Stdin)
