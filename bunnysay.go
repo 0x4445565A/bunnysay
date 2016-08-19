@@ -73,13 +73,11 @@ func printAnimal(animal string, maxLen int) {
       postString += "\n"
       printBunnyWide(strings.Repeat(postString, 3))
     case "lenny":
-      lennySpaces := strings.Repeat(" ", (maxLen-7)/2)
-      printBunnyWide(lennySpaces)
-      fmt.Println("         | |")
-      printBunnyWide(lennySpaces)
-      fmt.Println("( ͡° ͜ʖ ͡°) | |")
-      printBunnyWide(lennySpaces)
-      fmt.Println("/ 　   づ")
+      printBunnyWide("       ")
+      fmt.Print(" ")
+      printBunnyWide("||\n")
+      printBunnyWide("( ͡° ͜ʖ ͡°) ||\n")
+      printBunnyWide("/ 　   づ\n")
     default:
       bunnyTop := "(\\__/) ||"
       bunnySpaces := strings.Repeat(" ", (maxLen-6)/2)
