@@ -65,16 +65,24 @@ func printBunnyWide(s string) {
 }
 
 func printAnimal(animal string, maxLen int) {
-  switch animal {
+  switch animal { 
     case "post":
-      var postString = strings.Repeat(" ", (maxLen-1)/2)
+      var postString = strings.Repeat(" ", (maxLen)/2)
       postString += "||"
-      postString += strings.Repeat(" ", (maxLen-1)/2)
+      postString += strings.Repeat(" ", (maxLen)/2)
       postString += "\n"
       printBunnyWide(strings.Repeat(postString, 3))
+    case "lenny":
+      lennySpaces := strings.Repeat(" ", (maxLen-7)/2)
+      printBunnyWide(lennySpaces)
+      fmt.Println("         | |")
+      printBunnyWide(lennySpaces)
+      fmt.Println("( ͡° ͜ʖ ͡°) | |")
+      printBunnyWide(lennySpaces)
+      fmt.Println("/ 　   づ")
     default:
       bunnyTop := "(\\__/) ||"
-      bunnySpaces := strings.Repeat(" ", (maxLen-len(bunnyTop))/2)
+      bunnySpaces := strings.Repeat(" ", (maxLen-6)/2)
       printBunnyWide(bunnySpaces)
       fmt.Println(bunnyTop)
       printBunnyWide(bunnySpaces)
